@@ -1,116 +1,333 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<!-- data-android-soon：安卓安装包还没公开，下载按钮写「安卓版即将开放」（site.js）。安装包公开以后删掉这个标记，再发一次网站 -->
+<html lang="zh-CN" data-android-soon>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>中几互译 · 技术支持 / Support / Assistance</title>
-<meta name="description" content="中几互译：中文 ⇄ 几内亚法语翻译 App 的技术支持页。Support page for the Guinea Translator app." />
-<link rel="icon" href="icon.png" />
-<style>
-  body { margin: 0 auto; padding: 24px 16px 48px; max-width: 720px; font: 17px/1.6 -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; color: #111418; background: #fff; }
-  header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
-  header img { width: 64px; height: 64px; border-radius: 14px; }
-  h1 { font-size: 24px; margin: 0; }
-  h2 { font-size: 19px; margin: 32px 0 8px; }
-  h3 { font-size: 17px; margin: 18px 0 4px; }
-  p, li { margin: 6px 0; }
-  a { color: #00693e; }
-  .meta { color: #4a4f57; font-size: 14px; margin: 0; }
-  .langs { font-size: 14px; margin: 0 0 16px; }
-  .box { background: #f2f3f5; border-radius: 12px; padding: 12px 16px; margin: 12px 0; }
-  hr { border: 0; border-top: 1px solid #e3e5e9; margin: 40px 0; }
-  @media (prefers-color-scheme: dark) { body { background: #000; color: #f8fafc; } .box { background: #1c1c1e; } hr { border-color: #2f2f33; } .meta { color: #d1d5db; } a { color: #4ad395; } }
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中几互译：说中文，手机念几内亚法语｜安卓、iPhone 下载</title>
+<meta name="description" content="中几互译是给在几内亚的华人用的翻译 App：中文和几内亚人平时说的法语两边互译，3200 多句常用句断网也能用。安卓完整版直接下载，iPhone 去 App Store。">
+<meta name="theme-color" content="#07060f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="中几互译：说中文，手机念法语">
+<meta property="og:description" content="砍价、打车、修车，几内亚人怎么说，它就怎么翻。免费，不用注册。">
+<meta property="og:image" content="https://zhongjihuyi.com/assets/img/share.jpg">
+<meta property="og:url" content="https://zhongjihuyi.com/">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="preload" as="image" href="assets/img/aurora.jpg">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<p class="langs"><a href="#zh">中文</a> · <a href="#en">English</a> · <a href="#fr">Français</a></p>
+<a class="skip" href="#download">跳到下载</a>
 
-<header>
-  <img src="icon.png" alt="中几互译" />
-  <div>
-    <h1 id="zh">中几互译 技术支持</h1>
-    <p class="meta">中文 ⇄ 几内亚法语翻译 · iPhone（iOS 18 或更高版本）</p>
-  </div>
+<header class="nav">
+  <a class="nav__brand" href="#top" aria-label="中几互译，回到顶部"><img src="assets/img/icon-180.png" alt="" width="30" height="30">中几互译</a>
+  <nav class="nav__links" aria-label="页面目录">
+    <a href="#features">能做什么</a>
+    <a href="#faq">常见问题</a>
+    <a href="#contact">联系作者</a>
+    <a class="nav__get" href="#download">下载</a>
+  </nav>
 </header>
 
-<div class="box">
-<p><strong>联系我们：</strong><a href="mailto:32606264@qq.com">32606264@qq.com</a></p>
-<p>译文不对、地名翻错、话筒或朗读有问题，都可以发邮件。请写上你输入的原句、App 给的译文和手机型号，我们好照着查。</p>
+<main id="top">
+
+<!-- 首屏：深色大卡片。左边说 App 是什么，右边（手机上在下面）是下载 -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__card">
+    <div class="hero__main">
+      <div class="prod">
+        <img src="assets/img/icon-180.png" alt="" width="44" height="44">
+        <div><b>中几互译</b><small>中文 ⇄ 几内亚法语</small></div>
+      </div>
+      <h1 id="hero-title">说中文，<br><span class="grad-text">手机念法语。</span></h1>
+      <p class="hero__lead">给在几内亚的华人用的翻译 App。砍价、打车、修车，几内亚人怎么说就怎么翻；3200 多句常用句断网也能用。</p>
+      <ul class="quad">
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11.5" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></span><b>说完就念</b><span>说中文，手机念法语</span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8"/></svg></span><b>听得懂几内亚人</b><span>当地说法照样认得</span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0"/><path d="M3 3l18 18"/></svg></span><b>断网能用</b><span>词库装在手机里</span></li>
+        <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>免费</b><span>不用注册，没有广告</span></li>
+      </ul>
+      <div class="hero__art" aria-hidden="true">
+        <div class="aura"><span class="aura__glow"></span><span class="aura__spectrum"></span><span class="aura__ribbon"></span><span class="aura__cyan"></span><span class="aura__coral"></span><i class="meteor meteor--1"></i><i class="meteor meteor--2"></i><i class="meteor meteor--3"></i></div>
+        <div class="phone phone--back"><img src="assets/img/app-6.jpg" alt="" width="780" height="1688"></div>
+        <div class="phone phone--front"><img src="assets/img/app-1.jpg" alt="" width="780" height="1688"></div>
+      </div>
+    </div>
+
+    <div class="get" id="download" aria-labelledby="get-title">
+      <ol class="flow" aria-label="安卓装好只要四步">
+        <li><i>1</i>下载</li>
+        <li><i>2</i>允许安装</li>
+        <li><i>3</i>继续安装</li>
+        <li><i>4</i>打开就能用</li>
+      </ol>
+      <div class="get__box">
+        <p class="chips"><span>免费</span><span>不用注册</span><span>没有广告</span></p>
+        <h2 class="get__title" id="get-title">免费下载</h2>
+        <p class="get__sub">安卓直接下安装包，iPhone 去 App Store。</p>
+      </div>
+      <div class="pick">
+        <div class="pick__opt pick__opt--android">
+          <b>安卓 · 完整版</b>
+          <span><span data-v="full">1.34&nbsp;GB</span><br>安卓 7.0 以上</span>
+        </div>
+        <div class="pick__opt pick__opt--ios">
+          <b>iPhone · App Store</b>
+          <span>免费<br>iOS&nbsp;18 以上</span>
+        </div>
+      </div>
+      <div class="get__btns">
+        <a class="btn btn--grad" id="getAndroid" href="https://github.com/coleyeung001-arch/zhongjihuyi/releases/download/android-1.0.7/zhongjihuyi-1.0.7.apk" data-size="1.34 GB">下载安卓版</a>
+        <a class="btn btn--glass" id="getIos" href="https://apps.apple.com/app/id6834806101">去 App Store</a>
+      </div>
+      <p class="assure"><span>语音识别、法语朗读都在里面</span><span>装过旧版直接覆盖</span></p>
+      <p class="get__fine" id="androidFine">完整版 <span data-v="ver">1.0.7</span>，<span data-v="date">2026 年 11 月 24 日</span>。安装包 <span data-v="full">1.34&nbsp;GB</span>，下载前连上 Wi‑Fi；手机要留出约 <span data-v="store">3.0&nbsp;GB</span>，装好以后可以把下载的安装包删掉。流量不够？先装 <a href="https://github.com/coleyeung001-arch/zhongjihuyi/releases/download/android-1.0.7/zhongjihuyi-1.0.7-lite.apk">精简版（<span data-v="lite">14&nbsp;MB</span>）</a>。</p>
+      <p class="get__fine get__soon" id="androidSoon" hidden>安卓版正在上传，很快就能下载；着急的话加作者微信问问（见下面「联系作者」）。</p>
+      <p class="get__fine" id="iosNote">iPhone 在 App Store 下载，上架的是中国大陆以外的地区；中国区 Apple ID 要等国内备案以后才能下，等不及可以用外区账号（见下面）。</p>
+      <p class="get__fine get__soon" id="iosSoon" hidden>iPhone 版正在审核上架 App Store（先上中国大陆以外的地区，中国区要等国内备案）。审核通过以前，先装下面的测试版。</p>
+      <!-- iPhone 测试版（TestFlight）：公开链接填在 #getBeta 的 href 里；没填（href="#beta"）时按钮写「找作者要链接」 -->
+      <details class="beta" id="beta">
+        <summary>App Store 还没上架？先装测试版</summary>
+        <ol class="beta__steps">
+          <li><b>先装 TestFlight</b><span>在 App Store 搜「TestFlight」，装苹果自己出的那个（免费）。</span></li>
+          <li><b>打开测试链接</b><span>用 iPhone 的 Safari 点下面的按钮，打开苹果的测试页。</span></li>
+          <li><b>往下翻到 STEP 2，点「View in TestFlight」</b><span>就是下图标着「点这个」的那个。别点上面 STEP 1 的按钮，那个只是去装 TestFlight 的，点进去找不到中几互译。</span></li>
+          <li><b>在 TestFlight 里点「接受」「安装」</b><span>装好以后桌面上就有中几互译，和正式版一样用；有新测试版时 TestFlight 会提醒更新。</span></li>
+        </ol>
+        <img class="beta__shot" src="assets/img/testflight-step2.jpg" alt="苹果测试页：上面 STEP 1 的「View in App Store」不是要点的；往下 STEP 2 的「View in TestFlight」才是，标着「点这个」" width="660" height="718" loading="lazy">
+        <a class="btn btn--glass btn--small beta__btn" id="getBeta" href="https://testflight.apple.com/join/bDVcgj94">打开测试链接（TestFlight）</a>
+        <p class="get__fine">测试版要 iOS&nbsp;18 以上，90 天后过期，到时候装新的测试版或者 App Store 正式版就行。</p>
+      </details>
+      <!-- 中国区 Apple ID 下不到 App Store 版（国内还没上架）：教怎么用外区账号下 -->
+      <details class="beta" id="otherRegion">
+        <summary>中国区 Apple ID 下不到？用外区账号下载</summary>
+        <ol class="beta__steps">
+          <li><b>准备一个外区 Apple ID</b><span>中国大陆以外地区的都行，比如香港、新加坡、美国（欧盟国家的暂时不行）。没有的话，在 appleid.apple.com 新注册一个，地区选香港等，付款方式选「无」。</span></li>
+          <li><b>退出买 App 用的账号</b><span>打开「设置」，点最上面自己的名字，进「媒体与购买项目」，点「退出登录」。只退这一项，iCloud、照片、通讯录都不受影响；<strong>别点这一页最下面那个「退出登录」</strong>，那个会把 iCloud 一起退掉。（旧一点的 iOS：打开 App Store，点右上角头像，拉到最下面点「退出登录」。）</span></li>
+          <li><b>登录外区账号，下载中几互译</b><span>还在「媒体与购买项目」里登录外区 Apple ID（或者打开 App Store，点右上角头像登录也行），再到 App Store 搜「中几互译」下载。外区账号只用来下 App，iCloud 还是用自己原来的。</span></li>
+          <li><b>装好可以换回自己的账号</b><span>App 照常能用；以后要更新时，再登录外区账号更新一下。</span></li>
+        </ol>
+        <p class="get__fine">别用网上借来的「共享账号」，有被锁手机的风险。App Store 版还没上架时，先用上面的测试版。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 数字 -->
+<section class="numbers" aria-labelledby="numbers-title">
+  <div class="wrap">
+    <p class="pill" data-reveal>装在手机里</p>
+    <h2 class="sec-title" id="numbers-title" data-reveal>没信号的地方，<br>也照样翻得出来。</h2>
+    <p class="sec-lead" data-reveal>词库里的句子、单词、地名都装在手机里。工地、矿区、路上没信号，打开就能查、能念。</p>
+    <ul class="stats" data-reveal="group">
+      <li><b class="grad-text"><span data-count>3200</span><small>多句</small></b><span>常用句</span><em>买东西、打车、工地、看病、办事</em></li>
+      <li><b class="grad-text"><span data-count>280</span><small>多句</small></b><span>几内亚当地说法</span><em>Diminue un peu、On est ensemble</em></li>
+      <li><b class="grad-text"><span data-count>548</span><small>个</small></b><span>地名</span><em>科纳克里各区和全国城镇</em></li>
+      <li><b class="grad-text"><span data-count>2500</span><small>多个</small></b><span>单词</span><em>单说一个词也查得到</em></li>
+    </ul>
+    <ul class="big3" data-reveal="group">
+      <li><i>0</i><div><b>免费，不用注册</b><span>没有广告，不收集使用统计。</span></div></li>
+      <li><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11.5" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></i><div><b>识别、朗读都在包里</b><span>安卓完整版 <span data-v="full">1.34&nbsp;GB</span>，中文、法语语音识别和法语朗读不联网也能用。</span></div></li>
+      <li><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg></i><div><b>离线翻译包</b><span>词库里没有的整句，在设置里下好离线翻译包（<span data-v="pack">1133&nbsp;MB</span>），断网也能翻（运行内存 6&nbsp;GB 以上的手机）。</span></div></li>
+      <li><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg></i><div><b>词库智能增长</b><span>大家联网翻过的句子，每天整理出新的几内亚说法加进离线词库；App 联网时自动更新，不用重装。</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 功能分节 -->
+<section class="features" id="features" aria-label="能做什么">
+  <div class="wrap">
+    <article class="feat">
+      <div class="feat__text" data-reveal="group">
+        <p class="feat__no">01</p>
+        <h2 class="sec-title">说中文，<br>它念给对方听。</h2>
+        <p class="sec-lead">点「说中文」说一句，法语马上念出来；点「说法语」让对方说，翻成中文给你看。</p>
+        <ul class="points">
+          <li><b>两边都能说</b><span>「说中文」「说法语」两个大按钮，说完就翻。「说法语」那个按钮上是法语大字，递给对方也看得懂。</span></li>
+          <li><b>慢速再念一遍</b><span>对方没听清，点「慢速」放慢念。</span></li>
+          <li><b>太吵就给对方看</b><span>一句法语占满整个屏幕，递过去对方自己看。</span></li>
+        </ul>
+      </div>
+      <div class="feat__shot" data-reveal="media"><div class="phone"><img src="assets/img/app-3.jpg" alt="「给对方看」页面：一句法语用大号黄字占满屏幕" width="780" height="1688" loading="lazy"></div></div>
+    </article>
+
+    <article class="feat feat--flip">
+      <div class="feat__text" data-reveal="group">
+        <p class="feat__no">02</p>
+        <h2 class="sec-title">几内亚人怎么说，<br>它就怎么翻。</h2>
+        <p class="sec-lead">几内亚人说的法语和课本上不一样。东西坏了说 C'est gâté，砍价说 Diminue un peu，没问题说 On est ensemble。</p>
+        <ul class="points">
+          <li><b>当地说法都收进了词库</b><span>标着「当地说法」的，都是几内亚人平时真这么说的话。</span></li>
+          <li><b>地名按读音认</b><span>手机把「吉佩」听成「基倍」，也能认回 Kipé。</span></li>
+          <li><b>每句都有中文谐音</b><span>想自己开口时，照着谐音念。</span></li>
+        </ul>
+      </div>
+      <div class="feat__shot" data-reveal="media"><div class="phone"><img src="assets/img/app-2.jpg" alt="对方说法语，App 翻成中文的样子" width="780" height="1688" loading="lazy"></div></div>
+    </article>
+
+    <article class="feat">
+      <div class="feat__text" data-reveal="group">
+        <p class="feat__no">03</p>
+        <h2 class="sec-title">常用的话，<br>一翻就有。</h2>
+        <p class="sec-lead">短语按场景分好：日常、市场、打车、工地、看病、办事、当地口语。</p>
+        <ul class="points">
+          <li><b>搜中文、法语、谐音都行</b><span>记不全也搜得到。</span></li>
+          <li><b>收藏和我的词条</b><span>常用的收起来，自己的说法自己加。</span></li>
+          <li><b>报数不出错</b><span>输入 250&nbsp;000（二十五万），法语念 deux cent cinquante mille francs guinéens，顺手换算成人民币。</span></li>
+        </ul>
+      </div>
+      <div class="feat__shot feat__shot--two" data-reveal="media">
+        <div class="phone"><img src="assets/img/app-4.jpg" alt="短语页：按场景分好的常用句" width="780" height="1688" loading="lazy"></div>
+        <div class="phone"><img src="assets/img/app-5.jpg" alt="报数页：输入金额，法语念出来并换算人民币" width="780" height="1688" loading="lazy"></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 联系作者：微信、抖音（用户 2026-11-23 要加的） -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <p class="pill" data-reveal>联系作者</p>
+    <h2 class="sec-title" id="contact-title" data-reveal>有问题、有建议，<br>加我微信聊。</h2>
+    <p class="sec-lead" data-reveal>用着有什么问题、哪句翻得不对、想加什么功能，都可以加我微信说。我还会建一个微信群，在几内亚的朋友一起交流。</p>
+    <div class="contact__grid" data-reveal="group">
+      <div class="contact__card contact__card--wx">
+        <span class="contact__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 4C5.4 4 2 6.8 2 10.2c0 1.9 1.1 3.6 2.8 4.8L4.2 17l2.5-1.3c.9.3 1.8.4 2.8.4h.3a5.6 5.6 0 0 1-.2-1.5c0-3.3 3.2-5.9 7.1-5.9h.4C16.4 6 13.3 4 9.5 4z"/><path d="M16.7 9.9c-3.3 0-5.9 2.2-5.9 4.8s2.6 4.8 5.9 4.8c.7 0 1.4-.1 2-.3l2 1-.5-1.7c1.4-.9 2.3-2.3 2.3-3.8 0-2.6-2.6-4.8-5.8-4.8z"/></svg></span>
+        <b>微信</b>
+        <p class="contact__id">17709090099</p>
+        <span class="contact__note">加好友时说一声「中几互译」，问题、反馈、建议都行；交流群建好以后拉你进群。</span>
+        <button class="btn btn--grad btn--small contact__copy" type="button" data-copy="17709090099" data-done="已复制，到微信里搜索添加">复制微信号</button>
+      </div>
+      <div class="contact__card contact__card--dy">
+        <span class="contact__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3v11.2a3.3 3.3 0 1 1-3.3-3.3"/><path d="M14 3c.4 2.6 2.3 4.4 5 4.6"/></svg></span>
+        <b>抖音</b>
+        <p class="contact__id">杨慢慢走几内亚</p>
+        <span class="contact__note">我的抖音号，不定期分享在几内亚生活的视频。</span>
+        <button class="btn btn--glass btn--small contact__copy" type="button" data-copy="杨慢慢走几内亚" data-done="已复制，到抖音里搜索关注">复制抖音号</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 完整版和精简版 -->
+<section class="compare" aria-labelledby="compare-title">
+  <div class="wrap">
+    <h2 class="sec-title" id="compare-title" data-reveal>完整版和精简版，<br>逐项对比。</h2>
+    <p class="sec-lead" data-reveal>一般装完整版。流量不够时先装精简版，以后连上 Wi‑Fi 再装完整版覆盖，收藏、词条都还在。</p>
+    <div class="table" data-reveal role="table" aria-label="完整版和精简版对比">
+      <div class="tr th" role="row"><span role="columnheader"></span><span role="columnheader">完整版</span><span role="columnheader">精简版</span></div>
+      <div class="tr" role="row"><span role="rowheader">安装包</span><span role="cell"><span data-v="full">1.34&nbsp;GB</span></span><span role="cell"><span data-v="lite">14&nbsp;MB</span></span></div>
+      <div class="tr" role="row"><span role="rowheader">语音识别</span><span role="cell">自带中文、法语识别，不联网</span><span role="cell">用手机自己的识别，国内版手机多半认不了法语</span></div>
+      <div class="tr" role="row"><span role="rowheader">法语朗读</span><span role="cell">自带法语声音，不联网</span><span role="cell">手机自带的声音</span></div>
+      <div class="tr" role="row"><span role="rowheader">断网翻整句</span><span role="cell">设置里下离线翻译包（运行内存 6&nbsp;GB 以上的手机）</span><span role="cell">要另外下载谷歌的离线语言包</span></div>
+      <div class="tr" role="row"><span role="rowheader">词库、短语</span><span role="cell">都有</span><span role="cell">都有</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 装好四步 -->
+<section class="install" aria-labelledby="install-title">
+  <div class="wrap">
+    <p class="pill" data-reveal>安卓安装</p>
+    <h2 class="sec-title" id="install-title" data-reveal>装好只要四步。</h2>
+    <ol class="steps" id="steps" data-reveal="group">
+      <li><i>1</i><b>下载</b><span>浏览器提示这类文件可能有害时，选「仍然下载」。</span></li>
+      <li><i>2</i><b>允许安装</b><span>下载完点开安装包。手机问能不能安装未知应用，点「设置」，打开「允许来自此来源的应用」，再返回。</span></li>
+      <li><i>3</i><b>继续安装</b><span>提示「风险」「未经检测」时，点「继续安装」；有的手机要输一次手机账号的密码。华为、荣耀提示「纯净模式」时，选允许这一次安装。</span></li>
+      <li><i>4</i><b>打开就能用</b><span>装过旧版的，直接装新版覆盖，收藏、词条、最近翻译都还在。</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 常见问题 -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <h2 class="sec-title" id="faq-title" data-reveal>下载之前，<br>了解这些就够了。</h2>
+    <div class="faq__grid" data-reveal="group">
+      <details class="qa" name="faq">
+        <summary>要花钱吗？要注册吗？</summary>
+        <div class="qa__a"><p>免费，不用注册，没有广告，不收集使用统计。</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>安卓完整版为什么这么大？</summary>
+        <div class="qa__a"><p>法语朗读和中文、法语语音识别的模型都装在安装包里，装上不联网也能听、能念。手机要留出约 <span data-v="store">3.0&nbsp;GB</span>：下载的安装包 <span data-v="full">1.34&nbsp;GB</span>，装好的 App 也差不多这么大；装完可以把下载的安装包删掉。</p><p>自带的朗读和语音识别要运行内存 3&nbsp;GB 以上的手机，达不到的会改用手机自己的。断网翻整句的离线翻译包不在安装包里，要用的时候在 App 的设置里下。</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>流量不够，有小一点的吗？</summary>
+        <div class="qa__a"><p>有精简版，<a href="https://github.com/coleyeung001-arch/zhongjihuyi/releases/download/android-1.0.7/zhongjihuyi-1.0.7-lite.apk"><span data-v="lite">14&nbsp;MB</span></a>。它不带模型：朗读用手机自带的声音，说话靠手机自己的语音识别（国内版手机多半认不了法语）；断网翻整句要另外下载谷歌的离线语言包，用不了 App 的离线翻译包。以后连上 Wi‑Fi 再装完整版覆盖，收藏、词条都还在。</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>下载、安装时提示有风险？</summary>
+        <div class="qa__a"><p>不是从手机应用商店下的安装包，手机都会这么提示。按提示选「仍然下载」「继续安装」就行，步骤见上面的「装好只要四步」。新版可以直接覆盖安装，不用先卸载旧版，收藏、词条都还在。</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>华为手机能装吗？</summary>
+        <div class="qa__a"><p>鸿蒙 4 和更早的版本能装，提示「纯净模式」时选允许这一次安装。HarmonyOS&nbsp;5 以上（纯血鸿蒙）装不了安卓安装包。</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>iPhone 怎么下？中国区账号能下吗？</summary>
+        <div class="qa__a"><p>在 App Store 下载，要 iOS&nbsp;18 或更高版本。苹果没有几内亚区，App Store 版先上中国大陆以外的地区；中国区 Apple ID 要等国内备案以后才能下，等不及的话，可以用外区 Apple ID 下载，步骤在下载区「用外区账号下载」里。</p><p>App Store 还没上架时，可以先装测试版：先在 App Store 装苹果的 TestFlight，再打开<a href="https://testflight.apple.com/join/bDVcgj94">测试链接</a>，往下翻到 STEP 2 点「View in TestFlight」（别点上面 STEP 1 的按钮），再点「接受」「安装」。</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>不联网真的能翻吗？</summary>
+        <div class="qa__a"><p>词库里的句子和句型不用联网：买东西、打车、报数、问路、工地上的常用话。词库里没有的整句，安卓完整版在设置里下好离线翻译包以后，断网也能翻（要运行内存 6&nbsp;GB 以上的手机）；别的手机和精简版，用谷歌的离线语言包。iPhone 下好离线翻译包或苹果系统的离线语言包以后也能翻。有网的时候可以打开联网翻译，长句更通顺。</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>离线翻译包怎么下？</summary>
+        <div class="qa__a"><p>装好安卓完整版，打开 App 的设置，在「离线翻译」那一组点「下载离线翻译包（<span data-v="pack">1133&nbsp;MB</span>）」。最好连 Wi‑Fi，用手机流量时 App 会先问你。切到别的 App 也接着下，允许 App 发通知的话，通知栏能看到进度（不允许也照样下）；网断了，下次从断的地方接着下；下完会自己检查文件完整不完整。</p><p>要运行内存 6&nbsp;GB 以上的手机；设置里没有这一项，就是这台手机用不了，精简版也没有。用离线翻译包翻的句子都在手机上翻，不发出去。</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>我说的话会发出去吗？</summary>
+        <div class="qa__a"><p>收藏、词条、最近翻译都存在你的手机上，翻译和语音识别尽量在手机上完成。只有你同意了联网翻译，你确认要翻的那一句文字才会发到中几互译的翻译服务器，再交给第三方大模型服务商翻译；还在打字、没说完的半句不会发。自动更新词库、下载离线翻译包只是下载文件，不带你说过的话。联网翻译的原文和译文在服务器上最多留 3&nbsp;个月，用来改进词库；联网翻译随时可以在 App 的设置里关掉。详见<a href="privacy.html">隐私政策</a>。</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>翻得不对找谁？</summary>
+        <div class="qa__a"><p>加作者微信 <a href="#contact">17709090099</a> 反馈，发一下你输入的原句、App 给的译文（截个图最方便）和手机型号。译文供日常沟通参考；合同、看病、法律这类要紧的事，请再找翻译人员核对。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <a class="nav__brand" href="#top"><img src="assets/img/icon-180.png" alt="" width="30" height="30">中几互译</a>
+      <p>给在几内亚的华人用的中文 ⇄ 几内亚法语翻译 App。作者杨慢慢，矿山破碎设备厂家。有问题、有建议，<a href="#contact">加作者微信</a>反馈。</p>
+    </div>
+    <div class="foot__col"><b>下载</b><a href="#download">安卓 · iPhone</a><a href="#steps">安卓怎么装</a></div>
+    <div class="foot__col"><b>帮助</b><a href="#faq">常见问题</a><a href="support.html">使用帮助</a><a href="privacy.html">隐私政策</a></div>
+    <div class="foot__col"><b>联系</b><a href="#contact">微信 17709090099</a><a href="#contact">抖音 杨慢慢走几内亚</a><a href="mailto:32606264@qq.com">32606264@qq.com</a></div>
+  </div>
+  <p class="wrap foot__copy">© 2026 中几互译</p>
+</footer>
+
+<!-- 一直浮在底部的下载条：按手机换成对应的下载（见 site.js） -->
+<div class="dock" id="dock">
+  <img src="assets/img/icon-180.png" alt="" width="38" height="38">
+  <div class="dock__t"><b>中几互译</b><small id="dockMeta">免费 · 安卓、iPhone 都有</small></div>
+  <a class="btn btn--grad btn--small" id="dockBtn" href="#download">下载</a>
 </div>
 
-<h2>常见问题</h2>
-
-<h3>点了话筒没反应，或者提示没有权限</h3>
-<p>打开 iPhone「设置 → App → 中几互译」，把「麦克风」和「语音识别」都打开，再回到 App 点「我说中文」或「对方说法语」。</p>
-
-<h3>点「播放法语」没有声音</h3>
-<p>先看手机侧面的静音开关和音量。还没有声音，到 App「设置 → 发音」换一个法语声音，点「试听」。</p>
-
-<h3>断网时整句翻不了</h3>
-<p>词库里的两千多句不用联网。词库里没有的整句，要先在有网时到 App「设置 → 离线翻译 → 整句翻译」点「下载」，App 会请 iPhone 系统下载中文和法语的语言包（一般会弹出系统的下载窗口）；下好以后这里显示「已下载」，断网也能翻。</p>
-
-<h3>点了「下载」，系统的下载窗口没出来，或者一直没装好</h3>
-<p>语言包由 iPhone 系统下载和保管，和苹果自带的「翻译」App 用的是同一份，中几互译只能请系统下载，没法替它下。可以这样试：</p>
-<ol>
-<li>连上 Wi‑Fi，关掉低电量模式，回到 App 再点一次「下载」。</li>
-<li>打开苹果自带的「翻译」App（删掉了就去 App Store 装回来），点语言的名字 → 管理语言，下载「中文（普通话，简体）」和「法语」。下好后回到中几互译，会显示「已下载」。</li>
-<li>国行 iPhone：「设置 → App → 翻译」里有「无线数据」这一项的话，选带「蜂窝」的那一项。</li>
-<li>看看「设置 → 通用 → iPhone 储存空间」还剩多少，再把 iPhone 重启一次试试。</li>
-</ol>
-<p>在「翻译」App 里也下不了时，整句翻译可以用联网翻译；没网时用「短语」里的现成句子。App 里点下载没成功时，设置页会出现「下不了怎么办」，里面要是有「系统给的代码」，发邮件时附上能帮我们排查。</p>
-
-<h3>联网翻译怎么打开、关掉</h3>
-<p>第一次打开 App 时会问一次要不要打开，点了「同意并打开」才算打开；没点之前是关的。以后想开、想关，在 App「设置 → 联网翻译 → 允许联网翻译」，打开时会先给你看说明。打开后，词库里没有、你点了「翻译」或对着话筒说完的句子，会发到中几互译的翻译服务器，再交给第三方大模型服务商翻译；还在打字的半句不会发。也可以不打开：遇到词库里没有的句子时，只选「只联网翻这一句」。详见<a href="privacy.html">隐私政策</a>。</p>
-
-<h3>结果上写着「参考」是什么意思</h3>
-<p>这句词库里没有，App 先按词拼了一个大概的说法，可能不通顺。想要整句翻译，可以下载离线翻译，或者打开联网翻译。</p>
-
-<h3>怎么加自己常用的话</h3>
-<p>App「设置 → 我的词条与备份 → 添加词条」，填中文和法语。可以「导出」成文件备份，换手机后「导入」。导出的是自己的词条和已存译文；收藏和最近翻译只存在这台手机上，不在备份里。</p>
-
-<h3>怎么删除我的数据</h3>
-<p>收藏、最近翻译、词条都只存在手机上，删除 App 就全部删掉；也可以在 App 里逐项清空。联网翻译时服务器上会留存常用句（最多 3 个月）和译文缓存（每条最多 90 天）；想提前删掉和某句话有关的留存，发邮件告诉我们原文和大约哪天翻的。详见<a href="privacy.html">隐私政策</a>第 4、6 条。</p>
-
-<p><a href="privacy.html">隐私政策全文</a></p>
-
-<hr />
-
-<h1 id="en">中几互译 (Guinea Translator) — Support</h1>
-<p class="meta">Chinese ⇄ Guinean French translator · iPhone (iOS 18 or later) · The app interface is in Simplified Chinese.</p>
-
-<div class="box">
-<p><strong>Contact:</strong> <a href="mailto:32606264@qq.com">32606264@qq.com</a></p>
-<p>Write to us about wrong translations, place names, microphone or speech problems. Please include the sentence you entered, the translation the app gave, and your phone model.</p>
+<div class="sheet" id="wechat" role="dialog" aria-modal="true" aria-labelledby="wechatTitle" hidden>
+  <div class="sheet__panel sheet__panel--top">
+    <h2 class="sheet__title" id="wechatTitle">在浏览器里打开才能下载</h2>
+    <p>微信里不能直接下载安装包。点右上角「···」，选「在浏览器打开」，再点「下载安卓版」。</p>
+    <div class="sheet__btns"><button class="btn btn--grad" type="button" id="copyUrl">复制网址</button><button class="btn btn--plain" type="button" data-close>知道了</button></div>
+  </div>
 </div>
 
-<h2>Frequently asked questions</h2>
-
-<h3>The microphone button does nothing, or says permission is missing</h3>
-<p>Open iPhone Settings → Apps → 中几互译 and turn on Microphone and Speech Recognition, then go back to the app and tap “我说中文” (I speak Chinese) or “对方说法语” (They speak French).</p>
-
-<h3>No sound when I tap “播放法语” (Play French)</h3>
-<p>Check the silent switch and the volume. If there is still no sound, pick another French voice in the app under “设置 → 发音” (Settings → Voice) and tap “试听” (Test).</p>
-
-<h3>Full sentences cannot be translated offline</h3>
-<p>The 2,400+ phrasebook sentences need no connection. For sentences outside the phrasebook, go online once, open “设置 → 离线翻译 → 整句翻译” (Settings → Offline translation) in the app, tap “下载” (Download) and download Chinese and French in the system sheet. After that, translation works without a connection.</p>
-
-<h3>How do I turn online translation on or off?</h3>
-<p>In the app: “设置 → 联网翻译 → 允许联网翻译” (Settings → Online translation → Allow). It is off until you agree: the first time you open the app it asks once, and whenever you switch it on in Settings a notice is shown first; it is enabled only after you tap “同意并打开” (Agree and turn on). When it is on, sentences that are not in the phrasebook and that you have confirmed (the “翻译” button, or a finished spoken sentence) are sent to the 中几互译 translation server and then to a third-party large language model provider for translation; unfinished text is not sent. You can also leave it off and choose “只联网翻这一句” (this sentence only) when a sentence is not in the phrasebook. See the <a href="privacy.html#en">privacy policy</a>.</p>
-
-<h3>How do I delete my data?</h3>
-<p>Favourites, recent translations and your own entries are stored only on the phone and are removed when you delete the app; you can also clear them inside the app. With online translation, the server keeps common sentences (3 months at most) and a translation cache (90 days at most per entry). To have everything related to a sentence deleted earlier, e-mail us the text of the sentence and the approximate date. See sections 4 and 6 of the <a href="privacy.html#en">privacy policy</a>.</p>
-
-<hr />
-
-<h1 id="fr">中几互译 (Traducteur Guinée) — Assistance</h1>
-<p class="meta">Traducteur chinois ⇄ français de Guinée · iPhone (iOS 18 ou version ultérieure) · L'interface de l'app est en chinois simplifié.</p>
-
-<div class="box">
-<p><strong>Contact :</strong> <a href="mailto:32606264@qq.com">32606264@qq.com</a></p>
-<p>Écrivez-nous pour signaler une traduction incorrecte, un nom de lieu mal traduit ou un problème de micro ou de lecture à voix haute. Indiquez la phrase saisie, la traduction affichée et le modèle de votre téléphone.</p>
+<div class="sheet" id="install" role="dialog" aria-modal="true" aria-labelledby="installTitle" hidden>
+  <div class="sheet__panel">
+    <h2 class="sheet__title" id="installTitle">下载好以后这样装</h2>
+    <ol class="steps steps--sheet"></ol>
+    <div class="sheet__btns"><button class="btn btn--grad" type="button" data-close>知道了</button></div>
+  </div>
 </div>
 
-<p>Autorisations du micro : Réglages de l'iPhone → Apps → 中几互译 → activez « Microphone » et « Reconnaissance vocale ». La traduction en ligne est facultative et reste désactivée tant que vous ne l'avez pas acceptée ; l'App vous pose la question une fois à la première ouverture, une information s'affiche avant de l'activer, et seules les phrases que vous avez validées sont envoyées. Pour faire supprimer ce qui se rapporte à une phrase sur le serveur, écrivez-nous en indiquant le texte de la phrase et la date approximative. Voir la <a href="privacy.html#fr">politique de confidentialité</a>.</p>
-
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
