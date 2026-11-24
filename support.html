@@ -14,12 +14,12 @@
   h2 { font-size: 19px; margin: 32px 0 8px; }
   h3 { font-size: 17px; margin: 18px 0 4px; }
   p, li { margin: 6px 0; }
-  a { color: #00693e; }
+  a { color: #4d5bf7; }
   .meta { color: #4a4f57; font-size: 14px; margin: 0; }
   .langs { font-size: 14px; margin: 0 0 16px; }
   .box { background: #f2f3f5; border-radius: 12px; padding: 12px 16px; margin: 12px 0; }
   hr { border: 0; border-top: 1px solid #e3e5e9; margin: 40px 0; }
-  @media (prefers-color-scheme: dark) { body { background: #000; color: #f8fafc; } .box { background: #1c1c1e; } hr { border-color: #2f2f33; } .meta { color: #d1d5db; } a { color: #4ad395; } }
+  @media (prefers-color-scheme: dark) { body { background: #000; color: #f8fafc; } .box { background: #1c1c1e; } hr { border-color: #2f2f33; } .meta { color: #d1d5db; } a { color: #8e98ff; } }
 </style>
 </head>
 <body>
@@ -42,16 +42,23 @@
 <h2>常见问题</h2>
 
 <h3>点了话筒没反应，或者提示没有权限</h3>
-<p>打开 iPhone「设置 → App → 中几互译」，把「麦克风」和「语音识别」都打开，再回到 App 点「我说中文」或「对方说法语」。</p>
+<p>打开 iPhone「设置 → App → 中几互译」，把「麦克风」打开（说中文还要打开「语音识别」），再回到 App 点「说中文」或「说法语」。法语是在手机上认的，只要麦克风权限。</p>
 
 <h3>点「播放法语」没有声音</h3>
 <p>先看手机侧面的静音开关和音量。还没有声音，到 App「设置 → 发音」换一个法语声音，点「试听」。</p>
 
 <h3>断网时整句翻不了</h3>
-<p>词库里的两千多句不用联网。词库里没有的整句，要先在有网时到 App「设置 → 离线翻译 → 整句翻译」点「下载」，App 会请 iPhone 系统下载中文和法语的语言包（一般会弹出系统的下载窗口）；下好以后这里显示「已下载」，断网也能翻。</p>
+<p>词库里的 3200 多句不用联网。词库里没有的整句，要先在有网时下一个离线翻译：</p>
+<ul>
+<li>运行内存 6 GB 以上的 iPhone（大致是 iPhone 12 Pro、13 Pro、iPhone 14 和更新的；App 设置页里能看到「离线翻译包」这一行）：到 App「设置 → 离线翻译」点「下载离线翻译包」，约 1.1 GB，建议连 Wi‑Fi 下；用流量时 App 会先问你。下的时候可以切到别的 App，断了下次接着下。下好以后整句在手机上翻，不联网、不发出去。</li>
+<li>其他 iPhone：同一个地方点「下载离线翻译」，App 会请 iPhone 系统下载中文和法语的语言包；下好以后显示「已下载」。</li>
+</ul>
 
-<h3>点了「下载」，系统的下载窗口没出来，或者一直没装好</h3>
-<p>语言包由 iPhone 系统下载和保管，和苹果自带的「翻译」App 用的是同一份，中几互译只能请系统下载，没法替它下。可以这样试：</p>
+<h3>离线翻译包下到一半不动了</h3>
+<p>先看网络：换了 Wi‑Fi 或流量以后，回到 App 再点一次「继续下载」。手机空间要留出 2 GB 以上（「设置 → 通用 → iPhone 储存空间」）。还不行，发邮件告诉我们手机型号和设置页上显示的进度。</p>
+
+<h3>点了「下载离线翻译」，系统的下载窗口没出来，或者一直没装好</h3>
+<p>这是苹果系统的语言包（运行内存不到 6 GB 的 iPhone 用它），由 iPhone 系统下载和保管，和苹果自带的「翻译」App 用的是同一份，中几互译只能请系统下载，没法替它下。可以这样试：</p>
 <ol>
 <li>连上 Wi‑Fi，关掉低电量模式，回到 App 再点一次「下载」。</li>
 <li>打开苹果自带的「翻译」App（删掉了就去 App Store 装回来），点语言的名字 → 管理语言，下载「中文（普通话，简体）」和「法语」。下好后回到中几互译，会显示「已下载」。</li>
@@ -64,7 +71,7 @@
 <p>第一次打开 App 时会问一次要不要打开，点了「同意并打开」才算打开；没点之前是关的。以后想开、想关，在 App「设置 → 联网翻译 → 允许联网翻译」，打开时会先给你看说明。打开后，词库里没有、你点了「翻译」或对着话筒说完的句子，会发到中几互译的翻译服务器，再交给第三方大模型服务商翻译；还在打字的半句不会发。也可以不打开：遇到词库里没有的句子时，只选「只联网翻这一句」。详见<a href="privacy.html">隐私政策</a>。</p>
 
 <h3>结果上写着「参考」是什么意思</h3>
-<p>这句词库里没有，App 先按词拼了一个大概的说法，可能不通顺。想要整句翻译，可以下载离线翻译，或者打开联网翻译。</p>
+<p>这句词库里没有，App 先按词拼了一个大概的说法，可能不通顺。想要整句翻译，可以下载离线翻译包（或离线翻译），或者打开联网翻译。</p>
 
 <h3>怎么加自己常用的话</h3>
 <p>App「设置 → 我的词条与备份 → 添加词条」，填中文和法语。可以「导出」成文件备份，换手机后「导入」。导出的是自己的词条和已存译文；收藏和最近翻译只存在这台手机上，不在备份里。</p>
@@ -87,13 +94,17 @@
 <h2>Frequently asked questions</h2>
 
 <h3>The microphone button does nothing, or says permission is missing</h3>
-<p>Open iPhone Settings → Apps → 中几互译 and turn on Microphone and Speech Recognition, then go back to the app and tap “我说中文” (I speak Chinese) or “对方说法语” (They speak French).</p>
+<p>Open iPhone Settings → Apps → 中几互译 and turn on Microphone (and Speech Recognition for Chinese), then go back to the app and tap “说中文” (Speak Chinese) or “说法语” (Speak French). French speech is recognized on the phone and needs only the microphone.</p>
 
 <h3>No sound when I tap “播放法语” (Play French)</h3>
 <p>Check the silent switch and the volume. If there is still no sound, pick another French voice in the app under “设置 → 发音” (Settings → Voice) and tap “试听” (Test).</p>
 
 <h3>Full sentences cannot be translated offline</h3>
-<p>The 2,400+ phrasebook sentences need no connection. For sentences outside the phrasebook, go online once, open “设置 → 离线翻译 → 整句翻译” (Settings → Offline translation) in the app, tap “下载” (Download) and download Chinese and French in the system sheet. After that, translation works without a connection.</p>
+<p>The 3,200+ phrasebook sentences need no connection. For sentences outside the phrasebook, download offline translation once while online:</p>
+<ul>
+<li>iPhones with 6 GB of memory or more (roughly iPhone 12 Pro, 13 Pro, iPhone 14 and later; you will see “离线翻译包” in Settings): in the app, open “设置 → 离线翻译” (Settings → Offline translation) and tap “下载离线翻译包” (Download offline translation pack). It is about 1.1 GB; Wi‑Fi is recommended, and the app asks before using cellular data. Sentences are then translated on the phone and nothing is sent.</li>
+<li>Other iPhones: tap “下载离线翻译” in the same place and the app asks iOS to download the Chinese and French languages.</li>
+</ul>
 
 <h3>How do I turn online translation on or off?</h3>
 <p>In the app: “设置 → 联网翻译 → 允许联网翻译” (Settings → Online translation → Allow). It is off until you agree: the first time you open the app it asks once, and whenever you switch it on in Settings a notice is shown first; it is enabled only after you tap “同意并打开” (Agree and turn on). When it is on, sentences that are not in the phrasebook and that you have confirmed (the “翻译” button, or a finished spoken sentence) are sent to the 中几互译 translation server and then to a third-party large language model provider for translation; unfinished text is not sent. You can also leave it off and choose “只联网翻这一句” (this sentence only) when a sentence is not in the phrasebook. See the <a href="privacy.html#en">privacy policy</a>.</p>
@@ -111,7 +122,7 @@
 <p>Écrivez-nous pour signaler une traduction incorrecte, un nom de lieu mal traduit ou un problème de micro ou de lecture à voix haute. Indiquez la phrase saisie, la traduction affichée et le modèle de votre téléphone.</p>
 </div>
 
-<p>Autorisations du micro : Réglages de l'iPhone → Apps → 中几互译 → activez « Microphone » et « Reconnaissance vocale ». La traduction en ligne est facultative et reste désactivée tant que vous ne l'avez pas acceptée ; l'App vous pose la question une fois à la première ouverture, une information s'affiche avant de l'activer, et seules les phrases que vous avez validées sont envoyées. Pour faire supprimer ce qui se rapporte à une phrase sur le serveur, écrivez-nous en indiquant le texte de la phrase et la date approximative. Voir la <a href="privacy.html#fr">politique de confidentialité</a>.</p>
+<p>Autorisations du micro : Réglages de l'iPhone → Apps → 中几互译 → activez « Microphone » (et « Reconnaissance vocale » pour le chinois). La traduction en ligne est facultative et reste désactivée tant que vous ne l'avez pas acceptée ; l'App vous pose la question une fois à la première ouverture, une information s'affiche avant de l'activer, et seules les phrases que vous avez validées sont envoyées. Pour faire supprimer ce qui se rapporte à une phrase sur le serveur, écrivez-nous en indiquant le texte de la phrase et la date approximative. Voir la <a href="privacy.html#fr">politique de confidentialité</a>.</p>
 
 </body>
 </html>
