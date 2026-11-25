@@ -19,7 +19,10 @@
   .langs { font-size: 14px; margin: 0 0 16px; }
   .box { background: #f2f3f5; border-radius: 12px; padding: 12px 16px; margin: 12px 0; }
   hr { border: 0; border-top: 1px solid #e3e5e9; margin: 40px 0; }
-  @media (prefers-color-scheme: dark) { body { background: #000; color: #f8fafc; } .box { background: #1c1c1e; } hr { border-color: #2f2f33; } .meta { color: #d1d5db; } a { color: #8e98ff; } }
+  .foot { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e3e5e9; text-align: center; font-size: 13px; color: #6b7079; }
+  .foot a { color: inherit; text-decoration: none; }
+  .foot a:hover { text-decoration: underline; }
+  @media (prefers-color-scheme: dark) { body { background: #000; color: #f8fafc; } .box { background: #1c1c1e; } hr, .foot { border-color: #2f2f33; } .meta { color: #d1d5db; } a { color: #8e98ff; } .foot { color: #9ca3af; } .foot a { color: inherit; } }
 </style>
 </head>
 <body>
@@ -48,7 +51,7 @@
 <p>先看手机侧面的静音开关和音量。还没有声音，到 App「设置 → 发音」换一个法语声音，点「试听」。</p>
 
 <h3>断网时整句翻不了</h3>
-<p>词库里的 3200 多句不用联网。词库里没有的整句，要先在有网时下一个离线翻译：</p>
+<p>词库里的 6000 多句不用联网。词库里没有的整句，要先在有网时下一个离线翻译：</p>
 <ul>
 <li>运行内存 6 GB 以上的 iPhone（大致是 iPhone 12 Pro、13 Pro、iPhone 14 和更新的；App 设置页里能看到「离线翻译包」这一行）：到 App「设置 → 离线翻译」点「下载离线翻译包」，约 1.1 GB，建议连 Wi‑Fi 下；用流量时 App 会先问你。下的时候可以切到别的 App，断了下次接着下。下好以后整句在手机上翻，不联网、不发出去。</li>
 <li>其他 iPhone：同一个地方点「下载离线翻译」，App 会请 iPhone 系统下载中文和法语的语言包；下好以后显示「已下载」。</li>
@@ -100,7 +103,7 @@
 <p>Check the silent switch and the volume. If there is still no sound, pick another French voice in the app under “设置 → 发音” (Settings → Voice) and tap “试听” (Test).</p>
 
 <h3>Full sentences cannot be translated offline</h3>
-<p>The 3,200+ phrasebook sentences need no connection. For sentences outside the phrasebook, download offline translation once while online:</p>
+<p>The 6,000+ phrasebook sentences need no connection. For sentences outside the phrasebook, download offline translation once while online:</p>
 <ul>
 <li>iPhones with 6 GB of memory or more (roughly iPhone 12 Pro, 13 Pro, iPhone 14 and later; you will see “离线翻译包” in Settings): in the app, open “设置 → 离线翻译” (Settings → Offline translation) and tap “下载离线翻译包” (Download offline translation pack). It is about 1.1 GB; Wi‑Fi is recommended, and the app asks before using cellular data. Sentences are then translated on the phone and nothing is sent.</li>
 <li>Other iPhones: tap “下载离线翻译” in the same place and the app asks iOS to download the Chinese and French languages.</li>
@@ -124,5 +127,8 @@
 
 <p>Autorisations du micro : Réglages de l'iPhone → Apps → 中几互译 → activez « Microphone » (et « Reconnaissance vocale » pour le chinois). La traduction en ligne est facultative et reste désactivée tant que vous ne l'avez pas acceptée ; l'App vous pose la question une fois à la première ouverture, une information s'affiche avant de l'activer, et seules les phrases que vous avez validées sont envoyées. Pour faire supprimer ce qui se rapporte à une phrase sur le serveur, écrivez-nous en indiquant le texte de la phrase et la date approximative. Voir la <a href="privacy.html#fr">politique de confidentialité</a>.</p>
 
+<!-- ICP 备案号：照工信部要求放在页面底部中间，链到备案管理系统（和首页页脚同一个号）。
+     zhongjihuyi.com 现在没有网站备案（只有 App 备案，App 的号 -1A 不能挂在网站上），整块先藏着；有了网站备案号再填上、去掉两处 hidden -->
+<footer class="foot" hidden><a class="foot__icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" data-icp hidden>ICP备案号待填</a></footer>
 </body>
 </html>
