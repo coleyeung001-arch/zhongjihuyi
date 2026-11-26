@@ -10,6 +10,9 @@
   const isAndroid = /Android/i.test(ua);
   // 微信、QQ、微博、钉钉里的网页不让直接下安装包
   const inApp = /MicroMessenger|\bQQ\/|Weibo|DingTalk/i.test(ua);
+  const inAppName = /MicroMessenger/i.test(ua) ? '微信' : /\bQQ\//i.test(ua) ? 'QQ' : /Weibo/i.test(ua) ? '微博' : /DingTalk/i.test(ua) ? '钉钉' : '';
+  // 右上角「···」菜单里那一项：iPhone 的微信写「在 Safari 中打开」，安卓写「在浏览器打开」
+  const openIn = isIOS ? '在 Safari 中打开' : '在浏览器打开';
   const lock = (on) => { document.documentElement.style.overflow = on ? 'hidden' : ''; };
 
   const androidLink = $('#getAndroid');
@@ -22,14 +25,14 @@
     dockBtn.href = androidLink.href;
     dockBtn.textContent = '下载';
     // 大小跟着下载按钮的 data-size 走（发版工具只改那一处）
-    dockMeta.textContent = inApp ? '微信里要先点右上角「···」，选「在浏览器打开」' : '免费 · 安卓完整版 ' + androidLink.dataset.size + '，建议连 Wi‑Fi 下载';
+    dockMeta.textContent = inApp ? inAppName + '里要先点右上角「···」，选「' + openIn + '」' : '免费 · 安卓完整版 ' + androidLink.dataset.size + '，建议连 Wi‑Fi 下载';
     $('.pick__opt--android').classList.add('is-mine');
     // 第 2 条：「下载 → 允许安装 → 继续安装 → 打开」只对安卓手机说
     $('.flow').classList.add('is-on');
   } else if (isIOS) {
     dockBtn.href = iosLink.href;
     dockBtn.textContent = '下载';
-    dockMeta.textContent = '免费 · App Store · iOS 18 以上';
+    dockMeta.textContent = inApp ? inAppName + '里要先点右上角「···」，选「' + openIn + '」' : '免费 · App Store · iOS 18 以上';
     $('.pick__opt--ios').classList.add('is-mine');
     // iPhone 上 App Store 放前面、用主按钮的样子
     iosLink.parentNode.insertBefore(iosLink, androidLink);
@@ -37,6 +40,19 @@
     androidLink.classList.replace('btn--grad', 'btn--glass');
     $('.assure').hidden = true;
     $('#androidFine').hidden = true;
+    $('#iosNote').hidden = false;
+  }
+
+  /* ---------- 在微信、QQ 这类 App 里打开：下载卡最上面提示先用浏览器打开（按钮照旧能点，有的版本放行） ---------- */
+  if (inApp) {
+    const tip = $('#inAppTip');
+    tip.innerHTML = '';
+    const b = document.createElement('b');
+    b.textContent = inAppName + '里不能直接下载：';
+    tip.append(b, '点右上角「···」，选「' + openIn + '」，再点下载。');
+    tip.hidden = false;
+    // 点安卓安装包时弹出的那一层也按这个 App、这台手机写
+    $('#wechat p').textContent = inAppName + '里不能直接下载安装包。点右上角「···」，选「' + openIn + '」，再点「下载安卓版」。';
   }
 
   /* ---------- 安卓版还没公开（<html data-android-soon>）：安卓下载按钮写「即将开放」、不能点 ---------- */
@@ -53,13 +69,6 @@
       dockBtn.textContent = '联系作者';
       dockMeta.textContent = '安卓版马上开放，有问题先加作者微信';
     }
-  }
-
-  /* ---------- iPhone 测试版（TestFlight）：iPhone 上默认展开、测试链接用主按钮 ---------- */
-  const beta = $('#getBeta');
-  if (isIOS && beta) {
-    $('#beta').open = true;
-    beta.classList.replace('btn--glass', 'btn--grad');
   }
 
   /* ---------- 底部下载条：滚过下载卡以后才浮出来 ---------- */
@@ -196,6 +205,9 @@
   });
 
   /* ---------- App Store 上架了没有：没上架时按钮写「即将上架」，上架后自动能点 ---------- */
+  // 苹果各区同步有先后（2026-11-26 美国区一时查不到、别的区都有），所以几个区一起查：
+  // 任何一个区查到就算上架；每个区都明确答「没有」才写「即将上架」；网不通、查不全时按钮照旧。
+  const STORE_REGIONS = ['us', 'cn', 'hk', 'sg', 'gb'];
   // 页面加载完再查，网慢时不拖住页面
   const afterLoad = (fn) => (document.readyState === 'complete'
     ? setTimeout(fn, 300)
@@ -203,14 +215,15 @@
   afterLoad(function checkStore() {
     const links = $$('a[href*="apps.apple.com"]');
     if (!links.length) return;
-    const cb = '__gtStore' + Date.now();
-    const s = document.createElement('script');
-    let done = false;
+    const stamp = Date.now();
+    const scripts = [];
+    let done = false, no = 0;
     const finish = (live) => {
       if (done) return;
       done = true;
-      try { delete window[cb]; } catch (_) { window[cb] = undefined; }
-      s.remove();
+      // 别的区的回答可能还在路上：回调换成什么都不做的（删掉的话晚到的回答会报「没定义」）
+      STORE_REGIONS.forEach((c) => { window['__gtStore_' + c + stamp] = () => {}; });
+      scripts.forEach((s) => s.remove());
       if (live !== false) return; // 上架了，或者查不到（网不通）：按钮照旧
       links.forEach((a) => {
         a.setAttribute('aria-disabled', 'true');
@@ -219,19 +232,20 @@
       });
       $('#iosSoon').hidden = false;
       $('#iosNote').hidden = true;
-      // iPhone 上：App Store 还没上架时，底部按钮带去「先装测试版」那一块（TestFlight）
-      if (isIOS && $('#beta')) {
-        dockBtn.removeAttribute('aria-disabled');
-        dockBtn.href = '#beta';
-        dockBtn.textContent = '装测试版';
-        dockMeta.textContent = '正式版还在上架，先装测试版';
-        dockBtn.addEventListener('click', () => { $('#beta').open = true; });
-      } else if (isIOS) dockMeta.textContent = 'iPhone 版正在上架 App Store';
+      if (isIOS) dockMeta.textContent = 'iPhone 版正在上架 App Store';
     };
-    window[cb] = (data) => finish(!!(data && data.resultCount > 0));
-    s.onerror = () => finish(null);
+    STORE_REGIONS.forEach((c) => {
+      const cb = '__gtStore_' + c + stamp;
+      const s = document.createElement('script');
+      window[cb] = (data) => {
+        if (data && data.resultCount > 0) finish(true);
+        else if (++no === STORE_REGIONS.length) finish(false);
+      };
+      s.onerror = () => finish(null);
+      s.src = 'https://itunes.apple.com/lookup?id=6834806101&country=' + c + '&callback=' + cb;
+      scripts.push(s);
+      document.head.append(s);
+    });
     setTimeout(() => finish(null), 8000);
-    s.src = 'https://itunes.apple.com/lookup?id=6834806101&country=us&callback=' + cb;
-    document.head.append(s);
   });
 })();

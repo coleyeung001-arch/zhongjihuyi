@@ -6,6 +6,8 @@
 <title>中几互译 · 技术支持 / Support / Assistance</title>
 <meta name="description" content="中几互译：中文 ⇄ 几内亚法语翻译 App 的技术支持页。Support page for the Guinea Translator app." />
 <link rel="icon" type="image/png" href="icon.png?v=20261124" />
+<!-- iPhone 的 Safari 打开时，顶上出苹果自己画的「获取 / 打开」横幅（在页面外面，不占页面的位置；安卓、电脑、微信里都没有） -->
+<meta name="apple-itunes-app" content="app-id=6834806101">
 <style>
   body { margin: 0 auto; padding: 24px 16px 48px; max-width: 720px; font: 17px/1.6 -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; color: #111418; background: #fff; }
   header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
@@ -33,7 +35,7 @@
   <img src="icon.png" alt="中几互译" />
   <div>
     <h1 id="zh">中几互译 技术支持</h1>
-    <p class="meta">中文 ⇄ 几内亚法语翻译 · iPhone（iOS 18 或更高版本）· 安卓（7.0 或更高版本，下载和安装步骤见<a href="./#download">首页</a>）</p>
+    <p class="meta">中文 ⇄ 几内亚法语翻译 · iPhone（iOS 18 或更高版本，App Store 搜「中几互译」，中国区也能下）· 安卓（7.0 或更高版本，下载和安装步骤见<a href="./#download">首页</a>）</p>
   </div>
 </header>
 
@@ -44,24 +46,30 @@
 
 <h2>常见问题</h2>
 
+<h3>iPhone 在哪下？中国区 Apple ID 能下吗？</h3>
+<p>能。在 App Store 搜「中几互译」下载，免费，要 iOS 18 或更高版本。中国大陆的 App Store 也上架了，中国区 Apple ID 直接下；刚上架时搜索可能要一两天才搜得到，搜不到就点<a href="https://apps.apple.com/cn/app/id6834806101">中国区 App Store 的链接</a>。苹果没有几内亚区，在几内亚用中国区或别的地区的 Apple ID 都行（欧盟地区的暂时下不到）。App 约 1 GB，建议连 Wi‑Fi 下载。</p>
+
+<h3>法语识别、法语朗读要另外下载吗？</h3>
+<p>不用。App 自带法语语音识别和法语朗读，不用下苹果的语言包，断网也能用。iOS 26 以上的 iPhone，法语识别会优先用苹果在手机上的识别（法语模型由 iPhone 系统在连着 Wi‑Fi 时自己下载），没下好时用 App 自带的；两种都在手机上认，声音不发出去。中文识别用 iPhone 自己的语音识别。</p>
+
 <h3>点了麦克风没反应，或者提示没有权限</h3>
-<p>打开 iPhone「设置 → App → 中几互译」，把「麦克风」打开（说中文还要打开「语音识别」），再回到 App 点「说中文」或「说法语」。法语是在手机上认的，只要麦克风权限。</p>
+<p>打开 iPhone「设置 → App → 中几互译」，把「麦克风」打开（说中文还要打开「语音识别」），再回到 App 点「说中文」或「说法语」。法语是在手机上认的，一般只要麦克风权限。</p>
 
 <h3>点「播放法语」没有声音</h3>
-<p>先看手机侧面的静音开关和音量。还没有声音，到 App「设置 → 发音」换一个法语声音，点「试听」。</p>
+<p>先看手机侧面的静音开关和音量。默认用的是 App 自带的法语声音；还没有声音，到 App「设置 → 发音」换一个法语声音，点「试听」。</p>
 
 <h3>断网时整句翻不了</h3>
 <p>词库里的 6000 多句不用联网。词库里没有的整句，要先在有网时下一个离线翻译：</p>
 <ul>
 <li>运行内存 6 GB 以上的 iPhone（大致是 iPhone 12 Pro、13 Pro、iPhone 14 和更新的；App 设置页里能看到「离线翻译包」这一行）：到 App「设置 → 离线翻译」点「下载离线翻译包」，约 1.1 GB，建议连 Wi‑Fi 下；用流量时 App 会先问你。下的时候可以切到别的 App，断了下次接着下。下好以后整句在手机上翻，不联网、不发出去。</li>
-<li>其他 iPhone：同一个地方点「下载离线翻译」，App 会请 iPhone 系统下载中文和法语的语言包；下好以后显示「已下载」。</li>
+<li>其他 iPhone：同一个地方点「下载离线翻译」，App 会请 iPhone 系统下载中文和法语的翻译语言包；下好以后显示「已下载」。</li>
 </ul>
 
 <h3>离线翻译包下到一半不动了</h3>
 <p>先看网络：换了 Wi‑Fi 或流量以后，回到 App 再点一次「继续下载」。手机空间要留出 2 GB 以上（「设置 → 通用 → iPhone 储存空间」）。还不行，发邮件告诉我们手机型号和设置页上显示的进度。</p>
 
 <h3>点了「下载离线翻译」，系统的下载窗口没出来，或者一直没装好</h3>
-<p>这是苹果系统的语言包（运行内存不到 6 GB 的 iPhone 用它），由 iPhone 系统下载和保管，和苹果自带的「翻译」App 用的是同一份，中几互译只能请系统下载，没法替它下。可以这样试：</p>
+<p>这是苹果系统的翻译语言包（运行内存不到 6 GB 的 iPhone 用它），由 iPhone 系统下载和保管，和苹果自带的「翻译」App 用的是同一份，中几互译只能请系统下载，没法替它下。可以这样试：</p>
 <ol>
 <li>连上 Wi‑Fi，关掉低电量模式，回到 App 再点一次「下载」。</li>
 <li>打开苹果自带的「翻译」App（删掉了就去 App Store 装回来），点语言的名字 → 管理语言，下载「中文（普通话，简体）」和「法语」。下好后回到中几互译，会显示「已下载」。</li>
@@ -69,6 +77,9 @@
 <li>看看「设置 → 通用 → iPhone 储存空间」还剩多少，再把 iPhone 重启一次试试。</li>
 </ol>
 <p>在「翻译」App 里也下不了时，整句翻译可以用联网翻译；没网时用「短语」里的现成句子。App 里点下载没成功时，设置页会出现「下不了怎么办」，里面要是有「系统给的代码」，发邮件时附上能帮我们排查。</p>
+
+<h3>在中国国内能用联网翻译吗？</h3>
+<p>不能。在中国大陆的网络上不提供联网翻译：词库里没有的句子，App 会改在手机上离线翻，结果下面写着「你现在连的是中国大陆的网络……」。所以在国内想翻整句，要先下好离线翻译包（或离线翻译）。词库、短语、语音识别、法语朗读在国内照常能用；到了几内亚连上当地的网络，联网翻译就能用了。</p>
 
 <h3>联网翻译怎么打开、关掉</h3>
 <p>第一次打开 App 时会问一次要不要打开，点了「同意并打开」才算打开；没点之前是关的。以后想开、想关，在 App「设置 → 联网翻译 → 允许联网翻译」，打开时会先给你看说明。打开后，词库里没有、你点了「翻译」或对着麦克风说完的句子，会发到中几互译的翻译服务器，再交给第三方大模型服务商翻译；还在打字的半句不会发。也可以不打开：遇到词库里没有的句子时，只选「只联网翻这一句」。详见<a href="privacy.html">隐私政策</a>。</p>
@@ -96,11 +107,14 @@
 
 <h2>Frequently asked questions</h2>
 
+<h3>Where do I get the iPhone app? Does a mainland China Apple ID work?</h3>
+<p>Search for “中几互译” on the App Store; it is free and needs iOS 18 or later. It is also on the mainland China App Store, so a Chinese Apple ID works. Right after release, search may take a day or two to show it; you can use the <a href="https://apps.apple.com/cn/app/id6834806101">China App Store link</a> instead. It is not yet available in EU countries. The app is about 1 GB and includes French speech recognition and a French voice, so Wi‑Fi is recommended.</p>
+
 <h3>The microphone button does nothing, or says permission is missing</h3>
 <p>Open iPhone Settings → Apps → 中几互译 and turn on Microphone (and Speech Recognition for Chinese), then go back to the app and tap “说中文” (Speak Chinese) or “说法语” (Speak French). French speech is recognized on the phone and needs only the microphone.</p>
 
 <h3>No sound when I tap “播放法语” (Play French)</h3>
-<p>Check the silent switch and the volume. If there is still no sound, pick another French voice in the app under “设置 → 发音” (Settings → Voice) and tap “试听” (Test).</p>
+<p>Check the silent switch and the volume. The app uses its own French voice by default. If there is still no sound, pick another French voice in the app under “设置 → 发音” (Settings → Voice) and tap “试听” (Test).</p>
 
 <h3>Full sentences cannot be translated offline</h3>
 <p>The 6,000+ phrasebook sentences need no connection. For sentences outside the phrasebook, download offline translation once while online:</p>
@@ -108,6 +122,9 @@
 <li>iPhones with 6 GB of memory or more (roughly iPhone 12 Pro, 13 Pro, iPhone 14 and later; you will see “离线翻译包” in Settings): in the app, open “设置 → 离线翻译” (Settings → Offline translation) and tap “下载离线翻译包” (Download offline translation pack). It is about 1.1 GB; Wi‑Fi is recommended, and the app asks before using cellular data. Sentences are then translated on the phone and nothing is sent.</li>
 <li>Other iPhones: tap “下载离线翻译” in the same place and the app asks iOS to download the Chinese and French languages.</li>
 </ul>
+
+<h3>Can I use online translation in mainland China?</h3>
+<p>No. Online translation is not provided on mainland China networks: sentences outside the phrasebook are translated on the phone instead, so download offline translation first. The phrasebook, speech recognition and the French voice work as usual.</p>
 
 <h3>How do I turn online translation on or off?</h3>
 <p>In the app: “设置 → 联网翻译 → 允许联网翻译” (Settings → Online translation → Allow). It is off until you agree: the first time you open the app it asks once, and whenever you switch it on in Settings a notice is shown first; it is enabled only after you tap “同意并打开” (Agree and turn on). When it is on, sentences that are not in the phrasebook and that you have confirmed (the “翻译” button, or a finished spoken sentence) are sent to the 中几互译 translation server and then to a third-party large language model provider for translation; unfinished text is not sent. You can also leave it off and choose “只联网翻这一句” (this sentence only) when a sentence is not in the phrasebook. See the <a href="privacy.html#en">privacy policy</a>.</p>

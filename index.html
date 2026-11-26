@@ -6,6 +6,8 @@
 <title>中几互译：说中文，手机念几内亚法语｜安卓、iPhone 下载</title>
 <meta name="description" content="中几互译是给在几内亚的华人用的翻译 App：中文和几内亚人平时说的法语两边互译，6000 多句常用句断网也能用。安卓完整版直接下载，iPhone 去 App Store。">
 <meta name="theme-color" content="#07060f">
+<!-- iPhone 的 Safari 打开时，顶上出苹果自己画的「获取 / 打开」横幅（在页面外面，不占页面的位置；安卓、电脑、微信里都没有） -->
+<meta name="apple-itunes-app" content="app-id=6834806101">
 <meta property="og:type" content="website">
 <meta property="og:title" content="中几互译：说中文，手机念法语">
 <meta property="og:description" content="砍价、打车、修车，几内亚人怎么说，它就怎么翻。免费，不用注册。">
@@ -56,6 +58,8 @@
     </div>
 
     <div class="get" id="download" aria-labelledby="get-title">
+      <!-- 在微信、QQ 这类 App 里打开时才显示（site.js 按手机写「在浏览器打开」或「在 Safari 中打开」）；下载按钮照旧能点 -->
+      <p class="inapp-tip" id="inAppTip" role="note" hidden></p>
       <ol class="flow" aria-label="安卓装好只要四步">
         <li><i>1</i>下载</li>
         <li><i>2</i>允许安装</li>
@@ -84,32 +88,9 @@
       <p class="assure"><span>语音识别、法语朗读都在里面</span><span>装过旧版直接覆盖</span></p>
       <p class="get__fine" id="androidFine">完整版 <span data-v="ver">1.0.8</span>，<span data-v="date">2026 年 11 月 26 日</span>。安装包 <span data-v="full">1.34&nbsp;GB</span>，下载前连上 Wi‑Fi；手机要留出约 <span data-v="store">3.0&nbsp;GB</span>，装好以后可以把下载的安装包删掉。流量不够？先装 <a href="https://github.com/coleyeung001-arch/zhongjihuyi/releases/download/android-1.0.8/zhongjihuyi-1.0.8-lite.apk">精简版（<span data-v="lite">15&nbsp;MB</span>）</a>。</p>
       <p class="get__fine get__soon" id="androidSoon" hidden>安卓版正在上传，很快就能下载；着急的话加作者微信问问（见下面「联系作者」）。</p>
-      <p class="get__fine" id="iosNote">iPhone 在 App Store 下载，上架的是中国大陆以外的地区；中国区 Apple ID 要等国内备案以后才能下，等不及可以用外区账号（见下面）。</p>
-      <p class="get__fine get__soon" id="iosSoon" hidden>iPhone 版正在审核上架 App Store（先上中国大陆以外的地区，中国区要等国内备案）。审核通过以前，先装下面的测试版。</p>
-      <!-- iPhone 测试版（TestFlight）：公开链接填在 #getBeta 的 href 里；没填（href="#beta"）时按钮写「找作者要链接」 -->
-      <details class="beta" id="beta">
-        <summary>App Store 还没上架？先装测试版</summary>
-        <ol class="beta__steps">
-          <li><b>先装 TestFlight</b><span>在 App Store 搜「TestFlight」，装苹果自己出的那个（免费）。</span></li>
-          <li><b>打开测试链接</b><span>用 iPhone 的 Safari 点下面的按钮，打开苹果的测试页。</span></li>
-          <li><b>往下翻到 STEP 2，点「View in TestFlight」</b><span>就是下图标着「点这个」的那个。别点上面 STEP 1 的按钮，那个只是去装 TestFlight 的，点进去找不到中几互译。</span></li>
-          <li><b>在 TestFlight 里点「接受」「安装」</b><span>装好以后桌面上就有中几互译，和正式版一样用；有新测试版时 TestFlight 会提醒更新。</span></li>
-        </ol>
-        <img class="beta__shot" src="assets/img/testflight-step2.jpg" alt="苹果测试页：上面 STEP 1 的「View in App Store」不是要点的；往下 STEP 2 的「View in TestFlight」才是，标着「点这个」" width="660" height="718" loading="lazy">
-        <a class="btn btn--glass btn--small beta__btn" id="getBeta" href="https://testflight.apple.com/join/bDVcgj94">打开测试链接（TestFlight）</a>
-        <p class="get__fine">测试版要 iOS&nbsp;18 以上，90 天后过期，到时候装新的测试版或者 App Store 正式版就行。</p>
-      </details>
-      <!-- 中国区 Apple ID 下不到 App Store 版（国内还没上架）：教怎么用外区账号下 -->
-      <details class="beta" id="otherRegion">
-        <summary>中国区 Apple ID 下不到？用外区账号下载</summary>
-        <ol class="beta__steps">
-          <li><b>准备一个外区 Apple ID</b><span>中国大陆以外地区的都行，比如香港、新加坡、美国（欧盟国家的暂时不行）。没有的话，在 appleid.apple.com 新注册一个，地区选香港等，付款方式选「无」。</span></li>
-          <li><b>退出买 App 用的账号</b><span>打开「设置」，点最上面自己的名字，进「媒体与购买项目」，点「退出登录」。只退这一项，iCloud、照片、通讯录都不受影响；<strong>别点这一页最下面那个「退出登录」</strong>，那个会把 iCloud 一起退掉。（旧一点的 iOS：打开 App Store，点右上角头像，拉到最下面点「退出登录」。）</span></li>
-          <li><b>登录外区账号，下载中几互译</b><span>还在「媒体与购买项目」里登录外区 Apple ID（或者打开 App Store，点右上角头像登录也行），再到 App Store 搜「中几互译」下载。外区账号只用来下 App，iCloud 还是用自己原来的。</span></li>
-          <li><b>装好可以换回自己的账号</b><span>App 照常能用；以后要更新时，再登录外区账号更新一下。</span></li>
-        </ol>
-        <p class="get__fine">别用网上借来的「共享账号」，有被锁手机的风险。App Store 版还没上架时，先用上面的测试版。</p>
-      </details>
+      <!-- 只在 iPhone 上显示（site.js 放出来）：按钮本来就直接跳 App Store，这里只提醒大小 -->
+      <p class="get__fine" id="iosNote" hidden>App 约 1&nbsp;GB，建议连 Wi‑Fi 下载。</p>
+      <p class="get__fine get__soon" id="iosSoon" hidden>App Store 这会儿没查到中几互译，可能正在更新；过一会儿再来看看，着急的话加作者微信问问（见下面「联系作者」）。</p>
     </div>
   </div>
 </section>
@@ -128,7 +109,7 @@
     </ul>
     <ul class="big3" data-reveal="group">
       <li><i>0</i><div><b>免费，不用注册</b><span>没有广告，不收集使用统计。</span></div></li>
-      <li><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11.5" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></i><div><b>识别、朗读都在包里</b><span>安卓完整版 <span data-v="full">1.34&nbsp;GB</span>，中文、法语语音识别和法语朗读不联网也能用。</span></div></li>
+      <li><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11.5" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></i><div><b>识别、朗读都在包里</b><span>安卓完整版 <span data-v="full">1.34&nbsp;GB</span>，中文、法语语音识别和法语朗读不联网也能用；iPhone 版也自带法语识别和法语朗读。</span></div></li>
       <li><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg></i><div><b>离线翻译包</b><span>词库里没有的整句，在设置里下好离线翻译包（<span data-v="pack">1.1&nbsp;GB</span>），断网也能翻（运行内存 6&nbsp;GB 以上的手机）。</span></div></li>
       <li><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg></i><div><b>词库智能增长</b><span>大家联网翻过的句子，每天整理出新的几内亚说法加进离线词库；App 联网时自动更新，不用重装。</span></div></li>
     </ul>
@@ -267,7 +248,7 @@
       </details>
       <details class="qa" name="faq">
         <summary>iPhone 怎么下？中国区账号能下吗？</summary>
-        <div class="qa__a"><p>在 App Store 下载，要 iOS&nbsp;18 或更高版本。苹果没有几内亚区，App Store 版先上中国大陆以外的地区；中国区 Apple ID 要等国内备案以后才能下，等不及的话，可以用外区 Apple ID 下载，步骤在下载区「用外区账号下载」里。</p><p>App Store 还没上架时，可以先装测试版：先在 App Store 装苹果的 TestFlight，再打开<a href="https://testflight.apple.com/join/bDVcgj94">测试链接</a>，往下翻到 STEP 2 点「View in TestFlight」（别点上面 STEP 1 的按钮），再点「接受」「安装」。</p></div>
+        <div class="qa__a"><p>点上面「去 App Store」就能下，免费，要 iOS&nbsp;18 或更高版本。中国区 Apple ID 也能下。App 约 1&nbsp;GB，建议连 Wi‑Fi 下载。</p></div>
       </details>
       <details class="qa" name="faq">
         <summary>不联网真的能翻吗？</summary>

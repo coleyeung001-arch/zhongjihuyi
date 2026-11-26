@@ -131,19 +131,6 @@ a { color: inherit; }
 .stats em, .big3 li div > span, .points span, .sec-lead, .contact__note, .qa__a p { text-wrap: pretty; }
 .get__soon { color: #e7c8ff; }
 
-/* iPhone 测试版（TestFlight）怎么装 */
-.beta { margin-top: 14px; border: 1px solid var(--line-d); border-radius: 16px; background: rgba(255, 255, 255, 0.03); }
-.beta summary { list-style: none; cursor: pointer; padding: 13px 44px 13px 14px; position: relative; font-size: 14px; font-weight: 700; color: #fff; }
-.beta summary::-webkit-details-marker { display: none; }
-.beta summary::after { content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 18px; color: #b9b2ff; }
-.beta[open] summary::after { content: "−"; }
-.beta__steps { padding: 0 14px; display: grid; gap: 10px; counter-reset: b; }
-.beta__steps li { counter-increment: b; position: relative; padding-left: 30px; font-size: 14px; line-height: 1.6; color: var(--muted-d); }
-.beta__steps li::before { content: counter(b); position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 700; color: #fff; background: var(--grad); }
-.beta__steps b { display: block; color: #fff; font-size: 14.5px; }
-.beta__shot { display: block; width: calc(100% - 28px); margin: 12px 14px 0; border-radius: 12px; border: 1px solid var(--line-d); }
-.beta__btn { margin: 12px 14px 0; height: auto; min-height: 44px; padding: 10px 16px; text-align: center; line-height: 1.4; }
-.beta .get__fine { padding: 0 14px 14px; }
 
 /* ---------- 浅色区：通用 ---------- */
 .pill { display: inline-block; font-size: 13px; font-weight: 600; line-height: 1; color: #5b48e8; background: #ecebff; padding: 7px 13px; border-radius: 999px; }
@@ -243,6 +230,10 @@ a { color: inherit; }
 .foot__copy { margin-top: 30px; font-size: 13px; color: var(--faint-d); display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px; text-align: center; }
 .foot__icp { color: inherit; text-decoration: none; }
 .foot__icp:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+/* 在微信、QQ 这类 App 里打开时，下载卡最上面的一行提示：醒目但不吓人（淡紫底、白字，不用红色） */
+.inapp-tip { margin: 0 0 14px; padding: 11px 14px; border-radius: 14px; border: 1px solid rgba(180, 160, 255, 0.45); background: rgba(124, 92, 255, 0.16); color: #fff; font-size: 14.5px; line-height: 1.6; }
+.inapp-tip b { color: #d9ceff; }
 
 /* ---------- 底部下载条 ---------- */
 .dock {
