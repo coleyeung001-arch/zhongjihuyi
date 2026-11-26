@@ -49,8 +49,21 @@
     tip.innerHTML = '';
     const b = document.createElement('b');
     b.textContent = inAppName + '里不能直接下载：';
-    tip.append(b, '点右上角「···」，选「' + openIn + '」，再点下载。');
+    // 「在 Safari 中打开」这几个字别拆成两行
+    const how = () => { const k = document.createElement('span'); k.className = 'nowrap'; k.textContent = '「' + openIn + '」'; return k; };
+    tip.append(b, '点右上角「···」，选', how(), '，再点下载。');
     tip.hidden = false;
+    // 页面最顶上也钉一条（用户 2026-11-26：在微信里打开，第一眼看到的是首屏，下载卡要往下滑才看得到）
+    const bar = $('#inAppBar');
+    if (bar) {
+      $('.inapp-bar__text', bar).append(b.cloneNode(true), '点右上角「···」，选', how(), '，再点下载。');
+      bar.hidden = false;
+      // 顶栏跟着往下挪这条的高度；关掉以后挪回去
+      const setH = () => document.documentElement.style.setProperty('--bar-h', bar.hidden ? '0px' : bar.offsetHeight + 'px');
+      setH();
+      window.addEventListener('resize', setH);
+      $('.inapp-bar__close', bar).addEventListener('click', () => { bar.hidden = true; setH(); });
+    }
     // 点安卓安装包时弹出的那一层也按这个 App、这台手机写
     $('#wechat p').textContent = inAppName + '里不能直接下载安装包。点右上角「···」，选「' + openIn + '」，再点「下载安卓版」。';
   }
