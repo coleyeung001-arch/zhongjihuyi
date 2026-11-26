@@ -64,8 +64,8 @@
       window.addEventListener('resize', setH);
       $('.inapp-bar__close', bar).addEventListener('click', () => { bar.hidden = true; setH(); });
     }
-    // 点安卓安装包时弹出的那一层也按这个 App、这台手机写
-    $('#wechat p').textContent = inAppName + '里不能直接下载安装包。点右上角「···」，选「' + openIn + '」，再点「下载安卓版」。';
+    // 点下载时弹出的那一层也按这个 App、这台手机写（点的是安装包还是 App Store，见下面的点击处理）
+    $('#wechatTitle').textContent = '在' + (isIOS ? ' Safari ' : '浏览器') + '里打开才能下载';
   }
 
   /* ---------- 安卓版还没公开（<html data-android-soon>）：安卓下载按钮写「即将开放」、不能点 ---------- */
@@ -176,12 +176,21 @@
   });
   $('#install .steps').innerHTML = $('#steps').innerHTML;
 
-  // 点了安卓安装包：微信里先教怎么用浏览器打开；安卓手机上开始下载后说一下怎么装
+  // 点了安卓安装包或「去 App Store」：在微信、QQ 这类 App 里先拦下来，教怎么用浏览器打开
+  // （用户 2026-11-26 试过：iPhone 微信里点 App Store 链接不会跳，点了没反应会以为坏了）；安卓手机上开始下载后说一下怎么装
   document.addEventListener('click', (e) => {
-    const a = e.target.closest('a[href$=".apk"]');
+    const a = e.target.closest('a[href$=".apk"], a[href*="apps.apple.com"]');
     if (!a) return;
-    if (inApp) { e.preventDefault(); openLayer($('#wechat'), a); return; }
-    if (isAndroid) setTimeout(() => openLayer($('#install'), a), 700);
+    const store = /apps\.apple\.com/.test(a.getAttribute('href'));
+    if (inApp) {
+      e.preventDefault();
+      $('#wechat p').textContent = inAppName + (store
+        ? '里不能直接去 App Store。点右上角「···」，选「' + openIn + '」，再点「去 App Store」。'
+        : '里不能直接下载安装包。点右上角「···」，选「' + openIn + '」，再点「下载安卓版」。');
+      openLayer($('#wechat'), a);
+      return;
+    }
+    if (!store && isAndroid) setTimeout(() => openLayer($('#install'), a), 700);
   });
   $('#copyUrl').addEventListener('click', async (e) => {
     const btn = e.currentTarget;
